@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3f5f6;
+  --surface: #ffffff;
+  --ink: #0f1a24;
+  --muted: #4a5967;
+  --line: #d3dadf;
+  --blue: #0b6fa8;
+  --grid: rgba(11, 111, 168, 0.1);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0c1319;
+    --surface: #131d26;
+    --ink: #e9eef2;
+    --muted: #9fb0be;
+    --line: #27343f;
+    --blue: #6cc0f0;
+    --grid: rgba(108, 192, 240, 0.09);
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand-blue: var(--blue);
+  --color-brand-yellow: #ffdd00;
+}
+
+@theme {
+  --font-display: var(--font-archivo), "Arial Narrow", Arial, sans-serif;
+  --font-body: var(--font-source), "Segoe UI", Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: clamp(18px, 4vw, 40px);
+  }
+  .section {
+    padding-block: clamp(64px, 9vw, 112px);
+  }
+  .band {
+    background: var(--surface);
+    border-block: 1px solid var(--line);
+  }
+
+  /* tombol */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 24px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    border-radius: 3px;
+    cursor: pointer;
+    background: transparent;
+    color: var(--ink);
+  }
+  .btn-primary {
+    background: #ffdd00;
+    border-color: #ffdd00;
+    color: #0f1a24;
+  }
+  .btn-primary:hover {
+    background: #ffe94d;
+    border-color: #ffe94d;
+  }
+  .btn-ghost:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-sm {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 15px;
+  }
+
+  /* panel blueprint di hero */
+  .blueprint {
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-color: var(--surface);
+  }
+  .vdim {
+    position: absolute;
+    right: 14px;
+    top: 14%;
+    bottom: 14%;
+    width: 1px;
+    background: var(--blue);
+    opacity: 0.75;
+  }
+  .vdim::before,
+  .vdim::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    width: 11px;
+    height: 11px;
+    background: var(--blue);
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  }
+  .vdim::before {
+    top: 0;
+  }
+  .vdim::after {
+    bottom: 0;
+    transform: scaleY(-1);
+  }
+
+  /* tagline sebagai garis dimensi */
+  .hdim {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 44px;
+    max-width: 520px;
+    padding-inline: 6px;
+    color: var(--blue);
+  }
+  .hdim::before,
+  .hdim::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    width: 1px;
+    background: var(--blue);
+  }
+  .hdim::before {
+    left: 0;
+  }
+  .hdim::after {
+    right: 0;
+  }
+  .hdim .ln {
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+  }
+  .hdim i {
+    width: 12px;
+    height: 12px;
+    background: currentColor;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    flex: none;
+  }
+  .hdim i.r {
+    transform: scaleX(-1);
+  }
+  .hdim b {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  @media (max-width: 480px) {
+    .hdim b {
+      white-space: normal;
+      text-align: center;
+    }
+  }
+
+  /* garis waktu */
+  .tl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .tl::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--line);
+  }
+  .tl li {
+    position: relative;
+    padding: 0 0 30px 38px;
+  }
+  .tl li:last-child {
+    padding-bottom: 0;
+  }
+  .tl li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 16px;
+    height: 16px;
+    background: #ffdd00;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+  }
+}
