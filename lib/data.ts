@@ -114,13 +114,14 @@ export const facilities: Photo[] = [
   { src: img("fac-cnc-milling-1"), caption: L("CNC milling", "CNC milling") },
 ];
 
-export type CategoryKey = "all" | "mach" | "jig" | "fab" | "civil" | "plant";
+export type CategoryKey = "all" | "mach" | "jig" | "fab" | "stainless" | "civil" | "plant";
 
 export const categories: { key: CategoryKey; label: Localized }[] = [
   { key: "all", label: L("Semua", "All") },
   { key: "mach", label: L("Machining", "Machining") },
   { key: "jig", label: L("Jig & moulding", "Jig & moulding") },
   { key: "fab", label: L("Fabrikasi", "Fabrication") },
+  { key: "stainless", label: L("Stainless & tangki", "Stainless & tanks") },
   { key: "civil", label: L("Sipil & MEP", "Civil & MEP") },
   { key: "plant", label: L("Plant", "Plant") },
 ];
@@ -161,6 +162,20 @@ export const portfolio: PortfolioItem[] = [
   p("fab", "conv-belt", "Conveyor belt", "Belt conveyor"),
   p("fab", "conv-table-top", "Conveyor table top", "Table top conveyor"),
   p("fab", "conv-rubber", "Conveyor rubber", "Rubber conveyor"),
+  p("fab", "fab-rack-beam-orange", "Komponen rak, cat oranye", "Rack components, orange coating"),
+  p("fab", "fab-railing-yellow", "Railing pengaman kuning", "Yellow safety railing"),
+  p("fab", "fab-railing-install", "Pemasangan railing pengaman", "Safety railing installation"),
+  p("fab", "fab-trolley-yellow", "Trolley rangka kuning", "Yellow frame trolley"),
+  p("fab", "fab-drain-grating", "Saluran dan grating lantai", "Floor drain and grating"),
+  p("fab", "fab-screw-auger", "Screw conveyor / auger", "Screw conveyor / auger"),
+  p("fab", "fab-frame-welding", "Pengelasan rangka", "Frame welding"),
+
+  p("stainless", "ss-trolley-hanger", "Trolley stainless dengan gantungan", "Stainless trolley with hanger bars"),
+  p("stainless", "ss-platform-trolley", "Platform tangga stainless beroda", "Stainless step platform on wheels"),
+  p("stainless", "ss-tank-frame", "Tangki stainless dengan rangka", "Stainless tank with frame"),
+  p("stainless", "ss-tanks-ladder", "Tangki proses dan tangga", "Process tanks and ladder"),
+  p("stainless", "ss-fan-impeller", "Impeller fan stainless", "Stainless fan impeller"),
+  p("stainless", "ss-columns-base", "Kolom stainless dengan dudukan", "Stainless columns with base plates"),
 
   p("civil", "mep-ahu", "AHU system", "AHU system"),
   p("civil", "mep-piping", "Piping", "Piping"),
@@ -180,8 +195,16 @@ export const portfolio: PortfolioItem[] = [
     "Fire extinguisher system for heavy equipment, coal mine in Samarinda",
   ),
 
+  p("civil", "civil-cladding", "Pemasangan cladding fasad gedung", "Building facade cladding installation"),
+  p("civil", "mep-valves-piping", "Instalasi pipa dan valve", "Pipe and valve installation"),
+
   p("plant", "plant-1", "Instalasi plant", "Plant installation"),
   p("plant", "plant-2", "Instalasi plant", "Plant installation"),
   p("plant", "plant-3", "Instalasi plant", "Plant installation"),
   p("plant", "plant-4", "Instalasi plant", "Plant installation"),
+  p("plant", "proj-exhaust-ducts", "Ducting exhaust stainless dan platform", "Stainless exhaust ducting and platform"),
+  p("plant", "proj-exhaust-gate6", "Ducting exhaust sisi gedung pabrik", "Exhaust ducting on factory building"),
+  p("plant", "proj-tank-forklift", "Penempatan tangki dengan forklift", "Tank placement with forklift"),
+  p("plant", "proj-rotary-machine", "Mesin rotary dengan hopper dan tangga", "Rotary machine with hopper and ladder"),
+  p("plant", "proj-tank-grinding", "Perbaikan tangki di lokasi", "On-site tank repair"),
 ];

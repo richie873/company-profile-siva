@@ -28,7 +28,7 @@ Tambah bahasa baru: tambahkan kode di tipe `Lang` dan satu objek terjemahan di `
 
 ## Yang perlu diisi / dicek
 
-- Empat foto kategori **Plant** masih berlabel "Instalasi plant". Ganti dengan nama proyek yang benar di `lib/data.ts`.
+- Empat foto kategori **Plant** (instalasi) masih berlabel "Instalasi plant". Ganti dengan nama proyek yang benar di `lib/data.ts`.
 - Email perusahaan belum ada di compro. Tambahkan di `lib/site.ts` dan `components/Contact.tsx` bila ada.
 - Isi `NEXT_PUBLIC_SITE_URL` (lihat `.env.example`) setelah domain tersedia.
 
